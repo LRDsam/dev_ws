@@ -1,0 +1,23 @@
+# Define the x and y coordinates
+x = 1
+y = 5
+
+# Define the address of the text file
+address = r"Coordinates.txt"
+
+# Write an integer on the second line of the file
+with open(address, 'w') as fp:
+    fp.truncate()   # Clear the text file
+    fp.write(str(x))
+    fp.write('\n')
+    fp.write(str(y))
+    fp.write('\n')
+
+# Read the integer on the second line of the file
+with open(address, 'r') as fp:
+    x_Text = int(fp.readline().strip())
+    y_Text = int(fp.readline().strip())
+
+# Print the results
+print(f"The x coordinate is: {x_Text}")
+print(f"The y coordinate is: {y_Text}")
